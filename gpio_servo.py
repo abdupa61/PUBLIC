@@ -48,7 +48,7 @@ def main():
     print("PWM running. Press CTRL+C to exit.")
     try:
         while True:
-            time.sleep(0.25)
+            time.sleep(0.5)
             if val >= 100:
                 incr = -incr
             if val <= 0:
