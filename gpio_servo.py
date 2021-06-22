@@ -35,15 +35,16 @@ if output_pin is None:
 
 
 def main():
+    GPIO.setmode(GPIO.BOARD)
+    # set pin as an output pin with optional initial state of HIGH
+    GPIO.setup(output_pin, GPIO.OUT, initial=GPIO.HIGH)
+    p = GPIO.PWM(output_pin, 50)
     p.start(val)
     print("burda1")
     time.sleep(4)
     # Pin Setup:
     # Board pin-numbering scheme
-    GPIO.setmode(GPIO.BOARD)
-    # set pin as an output pin with optional initial state of HIGH
-    GPIO.setup(output_pin, GPIO.OUT, initial=GPIO.HIGH)
-    p = GPIO.PWM(output_pin, 50)
+
     val = 25
     p.ChangeDutyCycle(val)
     print("burda2")
