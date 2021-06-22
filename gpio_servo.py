@@ -49,11 +49,12 @@ def main():
     try:
         while True:
             time.sleep(0.25)
-            if val >= 150:
+            if val >= 100:
                 incr = -incr
             if val <= 0:
                 incr = -incr
             val += incr
+            print(val)
             p.ChangeDutyCycle(val)
     finally:
         p.stop()
