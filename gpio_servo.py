@@ -1,6 +1,5 @@
 import RPi.GPIO as GPIO
 import time
-import RPIO
 
 servoPIN = 18
 GPIO.setmode(GPIO.BOARD)
