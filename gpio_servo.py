@@ -42,22 +42,10 @@ def main():
     GPIO.setup(output_pin, GPIO.OUT, initial=GPIO.HIGH)
     p = GPIO.PWM(output_pin, 50)
     val = 25
-    incr = -5
     p.start(val)
-
-    print("PWM running. Press CTRL+C to exit.")
-    try:
-        while True:
-            time.sleep(0.5)
-            if val >= 100:
-                incr = -incr
-            if val <= 0:
-                incr = -incr
-            val += incr
-            p.ChangeDutyCycle(val)
-    finally:
-        p.stop()
-        GPIO.cleanup()
+    p.ChangeDutyCycle(val)
+    p.stop()
+    GPIO.cleanup()
 
 if __name__ == '__main__':
     main()
