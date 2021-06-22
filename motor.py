@@ -10,6 +10,8 @@ def main():
             GPIO.output(output_pin, curr_value)
             curr_value = GPIO.HIGH
             time.sleep(5)
+            GPIO.output(output_pin, GPIO.LOW)
+
     finally:
         GPIO.cleanup()
 if __name__ == '__main__':
