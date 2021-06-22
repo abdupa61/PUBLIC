@@ -48,13 +48,14 @@ def main():
     print("PWM running. Press CTRL+C to exit.")
     try:
         while True:
-            time.sleep(4)
             if val >= 100:
                 incr = -incr
             if val <= 0:
                 incr = -incr
             val += incr
             p.ChangeDutyCycle(val)
+            time.sleep(2)
+
     finally:
         p.stop()
         GPIO.cleanup()
