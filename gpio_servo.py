@@ -1,30 +1,33 @@
 import RPi.GPIO as GPIO
 import time
 
-servoPIN = 18
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(servoPIN, GPIO.OUT)
 
-p = GPIO.PWM(servoPIN, 50) # GPIO 17 for PWM with 50Hz
-p.start(2.5) # Initialization
-try:
-  while True:
-    p.ChangeDutyCycle(5)
-    time.sleep(0.5)
-    p.ChangeDutyCycle(7.5)
-    time.sleep(0.5)
-    p.ChangeDutyCycle(10)
-    time.sleep(0.5)
-    p.ChangeDutyCycle(12.5)
-    time.sleep(0.5)
-    p.ChangeDutyCycle(10)
-    time.sleep(0.5)
-    p.ChangeDutyCycle(7.5)
-    time.sleep(0.5)
-    p.ChangeDutyCycle(5)
-    time.sleep(0.5)
-    p.ChangeDutyCycle(2.5)
-    time.sleep(0.5)
-except KeyboardInterrupt:
-  p.stop()
-  GPIO.cleanup()
+output_pin = 33
+
+def main():
+    # Pin Setup:
+    # Board pin-numbering scheme
+    GPIO.setmode(GPIO.BOARD)
+    # set pin as an output pin with optional initial state of HIGH
+    GPIO.setup(output_pin, GPIO.OUT, initial=GPIO.HIGH)
+    p = GPIO.PWM(output_pin, 50)
+    val = 25
+    incr = 5
+    p.start(val)
+
+    print("PWM running. Press CTRL+C to exit.")
+    try:
+        while True:
+            time.sleep(0.25)
+            if val >= 100:
+                incr = -incr
+            if val <= 0:
+                incr = -incr
+            val += incr
+            p.ChangeDutyCycle(val)
+    finally:
+        p.stop()
+        GPIO.cleanup()
+
+if __name__ == '__main__':
+    main()
