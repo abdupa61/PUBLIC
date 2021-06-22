@@ -42,13 +42,13 @@ def main():
     val = 25
     p.start(val)
     print("burda1")
-    time.sleep(4)
+    time.sleep(8)
     # Pin Setup:
     # Board pin-numbering scheme
 
     p.ChangeDutyCycle(val)
     print("burda2")
-    time.sleep(4)
+    time.sleep(8)
     p.stop()
     GPIO.cleanup()
 
