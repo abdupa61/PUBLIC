@@ -41,23 +41,12 @@ def main():
     # set pin as an output pin with optional initial state of HIGH
     GPIO.setup(output_pin, GPIO.OUT, initial=GPIO.HIGH)
     p = GPIO.PWM(output_pin, 50)
-    val = 25
-    incr = 5
-    p.start(val)
-    k=0
+    p.start(25)
+
     print("PWM running. Press CTRL+C to exit.")
     try:
         while True:
-            time.sleep(0.3)
-            if val >= 100:
-                incr = -incr
-            if val <= 0:
-                k = k + 1
-                print("k=",k)
-                incr = -incr
-            val += incr
-            p.ChangeDutyCycle(val)
-            print(val)
+            time.sleep(1)
     finally:
         p.stop()
         GPIO.cleanup()
