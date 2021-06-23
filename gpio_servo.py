@@ -42,7 +42,7 @@ def main():
     GPIO.setup(output_pin, GPIO.OUT, initial=GPIO.HIGH)
     p = GPIO.PWM(output_pin, 50)
     val = 100
-    incr = -25
+    incr = 25
     p.start(val)
     k=0
     print("PWM running. Press CTRL+C to exit.")
