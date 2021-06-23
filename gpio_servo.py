@@ -14,15 +14,6 @@ def main():
     p2.start(2.5)
     print("p2 start at 2.5%")
     time.sleep(0.25)
-       #     p1.start(12)
-          #  print("p1 start at 12%")
-           # time.sleep(0.5)
-            #p2.start(12)
-            #print("p2 start at 12%")
-            #time.sleep(0.5)
-
-
-    p1.stop()
     p2.stop()
     GPIO.cleanup()
 
