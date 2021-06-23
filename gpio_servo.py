@@ -39,7 +39,7 @@ def main():
             time.sleep(0.25)
             p2.start(7.25)
             print("p2 start at 7.25%")
-            time.sleep(0.25)
+            time.sleep(2)
     finally:
         p1.stop()
         p2.stop()
