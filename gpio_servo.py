@@ -48,7 +48,7 @@ def main():
     print("PWM running. Press CTRL+C to exit.")
     try:
         while True:
-            time.sleep(0.3)
+            time.sleep(0.1)
             p.ChangeDutyCycle(val)
             if val >= 100:
                 incr = -incr
@@ -56,7 +56,7 @@ def main():
                 k = k + 1
                 print("k=",k)
                 incr = -incr
-                time.sleep (0.5)
+                time.sleep (0.6)
             val += incr
             print(val)
     finally:
