@@ -9,8 +9,8 @@ def main():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(output_pin2, GPIO.OUT, initial=GPIO.HIGH)
     p2 = GPIO.PWM(output_pin2, 50)
-    p2.start(2.5)
-    time.sleep(0.25)
+    p2.start(12)
+    time.sleep(0.5)
     p2.stop()
     GPIO.cleanup()
 
