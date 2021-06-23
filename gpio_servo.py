@@ -53,6 +53,7 @@ def main():
             if val >= 100:
                 incr = -incr
             if val <= 0:
+                p.ChangeDutyCycle (val)
                 k = k + 1
                 print("k=",k)
                 incr = -incr
