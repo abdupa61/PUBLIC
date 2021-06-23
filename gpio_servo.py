@@ -56,7 +56,7 @@ def main():
                 k = k + 1
                 print("k=",k)
                 incr = -incr
-                time.sleep (0.6)
+                time.sleep (2)
             val += incr
             print(val)
     finally:
