@@ -44,7 +44,7 @@ def main():
     val = 25
     incr = -5
     p.start(val)
-
+    k=0
     print("PWM running. Press CTRL+C to exit.")
     try:
         while True:
@@ -52,6 +52,8 @@ def main():
             if val >= 100:
                 incr = -incr
             if val <= 0:
+                k = k + 1
+                print(k)
                 incr = -incr
             val += incr
             print(val)
