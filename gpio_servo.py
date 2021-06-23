@@ -7,7 +7,6 @@ output_pin2 = 33
 
 def main():
     GPIO.setmode(GPIO.BOARD)
-    p1 = GPIO.PWM(output_pin1, 50)
     GPIO.setup(output_pin2, GPIO.OUT, initial=GPIO.HIGH)
     p2 = GPIO.PWM(output_pin2, 50)
 
