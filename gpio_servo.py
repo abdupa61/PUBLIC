@@ -53,7 +53,7 @@ def main():
                 incr = -incr
             if val <= 0:
                 k = k + 1
-                print(k)
+                print("k=",k)
                 incr = -incr
             val += incr
             print(val)
