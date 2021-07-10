@@ -15,8 +15,8 @@ def main():
         p2.start(2)
         time.sleep(0.75)
 
-        p2.stop()
-        GPIO.cleanup()
+    p2.stop()
+    GPIO.cleanup()
 
 if __name__ == '__main__':
     main()
