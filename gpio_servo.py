@@ -6,11 +6,15 @@ import time
 output_pin2 = 33
 
 def main():
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(output_pin2, GPIO.OUT, initial=GPIO.HIGH)
-    p2 = GPIO.PWM(output_pin2, 50)
-    p2.start(12)
-    time.sleep(0.5)
+    for i in range(5):
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(output_pin2, GPIO.OUT, initial=GPIO.HIGH)
+        p2 = GPIO.PWM(output_pin2, 50)
+        p2.start(12)
+        time.sleep(0.5)
+        p2.start(6)
+        time.sleep(2)
+
     p2.stop()
     GPIO.cleanup()
 
