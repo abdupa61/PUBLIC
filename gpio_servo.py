@@ -12,6 +12,9 @@ def main():
         p2 = GPIO.PWM(output_pin2, 50)
         p2.start(12)
         time.sleep(0.75)
+        p2.start(2)
+        time.sleep(0.75)
+
         p2.stop()
         GPIO.cleanup()
 
